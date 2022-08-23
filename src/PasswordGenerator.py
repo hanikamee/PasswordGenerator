@@ -8,8 +8,9 @@ def password_generation():
     password_length = int(input("Please enter the desired length for your password: "))
 
     # input validation
-    while type(password_length) != int:
-        password_length = int(input("Please enter the desired length for your password: "))
+    while password_length < 5:
+        print("Your password length is too short")
+        password_length = int(input("Please enter the desired length for your password (must be at least 5 characters): "))
 
     # string.printable includes lowercase and uppercase letters, numbers, and printable symbols
     password_characters = list(string.printable.strip(" \t\n\r\x0b\x0c")) 
